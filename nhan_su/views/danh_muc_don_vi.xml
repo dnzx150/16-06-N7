@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_form_danh_muc_don_vi" model="ir.ui.view">
+            <field name="name">danh.muc.don.vi.form</field>
+            <field name="model">danh_muc_don_vi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>Đơn vị</h1>
+                        </div>
+
+                        <group string="Danh mục đơn vị">
+                            <field name="name"/>
+                            <field name="ma"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_danh_muc_don_vi" model="ir.ui.view">
+            <field name="name">danh.muc.don.vi.tree</field>
+            <field name="model">danh_muc_don_vi</field>
+            <field name="arch" type="xml">
+                <tree string="Danh mục đơn vị">
+                    <field name="name"/>
+                    <field name="ma"/>
+                </tree>
+            </field>
+        </record>
+        <record id="action_danh_muc_don_vi" model="ir.actions.act_window">
+            <field name="name">Danh mục đơn vị</field>
+            <field name="res_model">danh_muc_don_vi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

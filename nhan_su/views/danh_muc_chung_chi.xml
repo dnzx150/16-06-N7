@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_form_danh_muc_chung_chi" model="ir.ui.view">
+            <field name="name">danh.muc.chung.chi.form</field>
+            <field name="model">danh_muc_chung_chi</field>
+            <field name="arch" type="xml">
+                <form string="Danh mục chứng chỉ">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="ma"/>
+                            <field name="mo_ta"/>
+                            <field name="ngay_cap"/>
+                            <field name="noi_cap"/> 
+                            <field name="hieu_luc"/>
+                            <field name="loai_chung_chi"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_danh_muc_chung_chi" model="ir.ui.view">
+            <field name="name">danh.muc.chung.chi.tree</field>
+            <field name="model">danh_muc_chung_chi</field>
+            <field name="arch" type="xml">
+                <tree string="Danh mục chứng chỉ">
+                    <field name="name"/>
+                    <field name="ma"/>
+                    <field name="mo_ta"/>
+                    <field name="ngay_cap"/>
+                    <field name="noi_cap"/> 
+                    <field name="hieu_luc"/>
+                    <field name="loai_chung_chi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="danh_muc_chung_chi_search" model="ir.ui.view">
+            <field name="name">danh.muc.chung.chi.search</field>
+            <field name="model">danh_muc_chung_chi</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="ma"/>
+                    <field name="loai_chung_chi"/>
+                </search>
+            </field>
+        </record>
+        <record id="action_danh_muc_chung_chi" model="ir.actions.act_window">
+            <field name="name">Danh mục chứng chỉ</field>
+            <field name="res_model">danh_muc_chung_chi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

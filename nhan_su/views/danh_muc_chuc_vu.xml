@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_danh_muc_chuc_vu_form" model="ir.ui.view">
+            <field name="name">danh_muc_chuc_vu.form</field>
+            <field name="model">danh_muc_chuc_vu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ma"/>
+                            <field name="name"/>
+                            <field name="phu_cap"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_danh_muc_chuc_vu_tree" model="ir.ui.view">
+            <field name="name">danh_muc_chuc_vu.tree</field>
+            <field name="model">danh_muc_chuc_vu</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma"/>
+                    <field name="name"/>
+                    <field name="phu_cap"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="danh_muc_chuc_vu_search" model="ir.ui.view">
+            <field name="name">danh_muc_chuc_vu.search</field>
+            <field name="model">danh_muc_chuc_vu</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma"/>
+                    <field name="name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_danh_muc_chuc_vu" model="ir.actions.act_window">
+            <field name="name">Danh mục chức vụ</field>
+            <field name="res_model">danh_muc_chuc_vu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

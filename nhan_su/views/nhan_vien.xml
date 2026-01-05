@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!-- FORM VIEW -->
+        <record id="view_nhan_vien_form" model="ir.ui.view">
+            <field name="name">nhan_vien.form</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook>
+                            <page string="Thông tin chung">
+                            
+                                <field name="lich_su_cong_tac_ids" nolabel="1">
+                                    <tree editable="bottom">
+                                        <field name="don_vi_id"/>
+                                        <field name="chuc_vu"/>
+                                        <field name="ngay_bat_dau"/>
+                                        <field name="ngay_ket_thuc"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <field name="don_vi_id"/>
+                                                <field name="chuc_vu"/>
+                                                <field name="ngay_bat_dau"/>
+                                                <field name="ngay_ket_thuc"/>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+               
+                
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>Nhân viên</h1>
+                        </div>
+
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_dinh_danh"/>
+                            <field name="name"/>
+                            <field name="ngay_sinh"/>
+                            <field name="tuoi" readonly="1"/>
+                            <field name="que_quan"/>
+                            <field name="email"/>
+                            <field name="so_dien_thoai"/>
+                            <field name="so_bhxh"/>
+                            <field name="ngay_tham_gia"/>
+                            <field name="chuyen_mon"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- TREE VIEW -->
+        <record id="view_nhan_vien_tree" model="ir.ui.view">
+            <field name="name">nhan_vien.tree</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_dinh_danh"/>
+                    <field name="name"/>
+                    <field name="ngay_sinh"/>
+                    <field name="tuoi"/>
+                    <field name="email"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="so_bhxh"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- SEARCH VIEW -->
+        <record id="nhan_vien_search" model="ir.ui.view">
+            <field name="name">nhan_vien.search</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_dinh_danh"/>
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="so_bhxh"/>
+                    <field name="chuyen_mon"/>
+                    <field name="tuoi"/>
+                </search>
+            </field>
+        </record>
+
+        <!-- ACTION -->
+            <record id="action_nhan_vien" model="ir.actions.act_window">
+                <field name="name">Nhân viên</field>
+                <field name="res_model">nhan_vien</field>
+                <field name="view_mode">tree,form</field>
+                <field name="search_view_id" ref="nhan_vien_search"/>
+            </record>
+
+        </data>
+</odoo>
