@@ -1,0 +1,23 @@
+<odoo>
+    <record id="view_custom_asset_tree" model="ir.ui.view">
+        <field name="name">custom.asset.tree</field>
+        <field name="model">custom.asset</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_custom_asset" model="ir.actions.act_window">
+        <field name="name">Quản lý Tài sản</field>
+        <field name="res_model">custom.asset</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_asset_root" name="Quản lý Tài sản" sequence="10"/>
+    <menuitem id="menu_asset_list" name="Danh mục tài sản" parent="menu_asset_root" action="action_custom_asset"/>
+</odoo>
