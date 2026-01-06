@@ -6,11 +6,9 @@ class CustomAsset(models.Model):
 
     name = fields.Char(string='Tên tài sản', required=True)
     code = fields.Char(string='Mã tài sản', required=True)
-    category = fields.Selection([
-        ('electronic', 'Thiết bị điện tử'),
-        ('furniture', 'Nội thất'),
-        ('other', 'Khác')
-    ], string='Loại tài sản', default='electronic')
+    category_id = fields.Many2one('asset.category', string='Danh mục tài sản')
+    maintenance_ids = fields.One2many('asset.maintenance', 'asset_id', string='Lịch sử bảo trì')
+    assignment_ids = fields.One2many('asset.assignment', 'asset_id', string='Lịch sử bàn giao')
     status = fields.Selection([
         ('available', 'Sẵn sàng'),
         ('using', 'Đang sử dụng'),
